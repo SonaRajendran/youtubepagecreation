@@ -1,10 +1,12 @@
+// ignore_for_file: camel_case_types, use_key_in_widget_constructors, duplicate_ignore, library_private_types_in_public_api, non_constant_identifier_names, sort_child_properties_last, avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class _MainPageState extends State<MainPage_class> {
   // List of pages to display in the main content area
   final List<Widget> pages = [
     // Replace these with your own page widgets
-    page1(),
+    const page1(),
     Page2(),
     Page3(),
     page4(),
@@ -48,13 +50,13 @@ class _MainPageState extends State<MainPage_class> {
     var myVariable = Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text(
+        title: const Text(
           "YouTube",
           style: TextStyle(color: Colors.white),
         ),
         actions: [
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.connected_tv_outlined,
               color: Colors.white,
             ),
@@ -63,7 +65,7 @@ class _MainPageState extends State<MainPage_class> {
             },
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               color: Colors.white,
             ),
@@ -72,7 +74,7 @@ class _MainPageState extends State<MainPage_class> {
             },
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.notifications,
               color: Colors.white,
             ),
@@ -81,7 +83,7 @@ class _MainPageState extends State<MainPage_class> {
             },
           ),
           IconButton(
-            icon: Icon(
+            icon: const Icon(
               Icons.account_circle_outlined,
               color: Colors.white,
             ),
@@ -93,7 +95,7 @@ class _MainPageState extends State<MainPage_class> {
         // SECOND SUGGESSTIONBAR CODE
 
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(50.0),
+          preferredSize: const Size.fromHeight(50.0),
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
@@ -101,17 +103,16 @@ class _MainPageState extends State<MainPage_class> {
               children: [
                 TextButton(
                   onPressed: () {},
-                  child: Row(
+                  child: const Row(
                     children: [
                       Icon(
                         Icons.explore_outlined,
                         color: Colors.white,
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                        padding: EdgeInsets.symmetric(horizontal: 5.0),
                         child: Text(
                           "Explore",
-                          
                         ),
                       ),
                     ],
@@ -166,20 +167,20 @@ class _MainPageState extends State<MainPage_class> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               child: Text('sona.rajendrean@gmail.com'),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
             ),
             ListTile(
-              title: Text('Login'),
+              title: const Text('Login'),
               onTap: () {
                 // Implement action for drawer item 1
               },
             ),
             ListTile(
-              title: Text('Logout'),
+              title: const Text('Logout'),
               onTap: () {
                 // Implement action for drawer item 2
               },
@@ -201,7 +202,7 @@ class _MainPageState extends State<MainPage_class> {
               _currentIndex = index;
             });
           },
-          items: [
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
@@ -285,7 +286,7 @@ class ListTextImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 4,
         crossAxisSpacing: 15.0,
         mainAxisSpacing: 16.0,
@@ -296,7 +297,7 @@ class ListTextImage extends StatelessWidget {
           color: Colors.red,
           child: Column(
             children: [
-              ListTile(
+              const ListTile(
                 title: Text(
                   'I N D I A N_F A M O U S',
                   style: TextStyle(
@@ -311,9 +312,9 @@ class ListTextImage extends StatelessWidget {
               Text(text[index]),
               Container(
                 color: Colors.red,
-                child: Icon(Icons.star_half, color: Colors.white),
+                child: const Icon(Icons.star_half, color: Colors.white),
               ),
-              Text('4.0 Rating'),
+              const Text('4.0 Rating'),
             ],
           ),
         );
@@ -362,16 +363,16 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 ListTile(
-                  leading: Icon(Icons.thumb_up),
-                  title: Text('Like'),
+                  leading: const Icon(Icons.thumb_up),
+                  title: const Text('Like'),
                   onTap: () {
                     displayText('You liked the item.');
                     Navigator.pop(context);
                   },
                 ),
                 ListTile(
-                  leading: Icon(Icons.thumb_down),
-                  title: Text('Dislike'),
+                  leading: const Icon(Icons.thumb_down),
+                  title: const Text('Dislike'),
                   onTap: () {
                     displayText('You disliked the item.');
                     Navigator.pop(context);
@@ -408,7 +409,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
                         Text(
                           displayedText,
-                          style: TextStyle(fontSize: 24),
+                          style: const TextStyle(fontSize: 24),
                         ),
                       ],
                     ),
@@ -420,7 +421,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: _showBottomSheet,
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ));
   }
 }
