@@ -111,7 +111,7 @@ class _MainPageState extends State<MainPage_class> {
                         padding: const EdgeInsets.symmetric(horizontal: 5.0),
                         child: Text(
                           "Explore",
-                          style: Theme.of(context).textTheme.subtitle2,
+                          
                         ),
                       ),
                     ],
